@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { width: 320px; font: 13px/1.45 -apple-system, "Segoe UI", sans-serif; margin: 0; background: #14192b; color: #ecf0f5; }
+    header { display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-bottom: 1px solid #2a3350; }
+    header img { width: 20px; height: 20px; }
+    header b { font-size: 14px; }
+    .row { padding: 10px 12px; border-bottom: 1px solid #232b45; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .muted { color: #8fa0c0; font-size: 12px; }
+    button { border: 0; border-radius: 8px; padding: 6px 12px; cursor: pointer; font-size: 13px; }
+    #solve { background: #1e6fe0; color: #fff; font-weight: 600; }
+    a { color: #74b6ff; text-decoration: none; }
+    #log { padding: 8px 12px; max-height: 200px; overflow-y: auto; font-size: 11.5px; color: #b9c6e0; }
+    #log div { margin-bottom: 3px; word-break: break-word; }
+    #log .err { color: #ff8080; }
+  </style>
+</head>
+<body>
+  <header><img src="../icons/icon48.png" alt=""><b>AutoTester</b><span class="muted" id="state">готов</span></header>
+  <div class="row">
+    <span class="muted">Заполнить ответы на открытой странице теста</span>
+    <button id="solve">Решить</button>
+  </div>
+  <div class="row">
+    <span class="muted">Заканчивать попытку нужно самому</span>
+    <a href="#" id="opts">Настройки</a>
+  </div>
+  <div id="log"></div>
+  <script src="popup.js"></script>
+</body>
+</html>

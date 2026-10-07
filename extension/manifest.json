@@ -1,0 +1,62 @@
+{
+  "manifest_version": 3,
+  "name": "AutoTester BMSTU",
+  "version": "0.2.0",
+  "description": "Решатель тестов LMS BMSTU через DeepSeek.",
+  "permissions": ["storage", "tabs", "notifications", "scripting"],
+  "host_permissions": [
+    "https://lms.bmstu.ru/*",
+    "https://chat.deepseek.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "AutoTester",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "options_page": "options/options.html",
+  "content_scripts": [
+    {
+      "matches": ["https://lms.bmstu.ru/*"],
+      "js": ["content/lms.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://chat.deepseek.com/*"],
+      "js": ["content/deepseek.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "commands": {
+    "solve-now": {
+      "suggested_key": { "default": "Alt+S" },
+      "description": "Решить текущую страницу теста сейчас"
+    },
+    "save-page": {
+      "suggested_key": { "default": "Alt+Shift+S" },
+      "description": "Сохранить HTML текущей страницы в загрузки"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["worker.js"],
+      "matches": [
+        "https://lms.bmstu.ru/*",
+        "https://chat.deepseek.com/*",
+        "http://localhost/*",
+        "http://localhost:8787/*"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { font: 14px/1.5 -apple-system, "Segoe UI", sans-serif; background: #14192b; color: #ecf0f5; margin: 0; padding: 24px; max-width: 560px; }
+    h1 { font-size: 18px; margin: 0 0 16px; }
+    .card { background: #1b2340; border-radius: 12px; padding: 16px 18px; margin-bottom: 14px; }
+    .card h2 { font-size: 14px; margin: 0 0 10px; color: #8fa0c0; text-transform: uppercase; letter-spacing: .04em; }
+    label.row { display: flex; align-items: flex-start; gap: 10px; margin: 8px 0; cursor: pointer; }
+    label.row input[type="checkbox"] { margin-top: 3px; }
+    .sub { color: #8fa0c0; font-size: 12.5px; }
+    button { background: #1e6fe0; color: #fff; font-weight: 700; border: 0; border-radius: 8px; padding: 8px 20px; cursor: pointer; font-size: 14px; }
+    #saved { color: #2ecc71; margin-left: 10px; opacity: 0; transition: opacity .3s; }
+  </style>
+</head>
+<body>
+  <h1>AutoTester — настройки</h1>
+
+  <div class="card">
+    <h2>Сдача попытки</h2>
+    <label class="row"><input type="checkbox" id="autoSubmit"><span>Сам нажимать финальную «Закончить попытку»<br><span class="sub">По умолчанию выключено: расширение заполняет ответы, а попытку заканчиваешь ты после проверки.</span></span></label>
+    <label class="row"><input type="checkbox" id="strictMode"><span>Строгий режим: если DeepSeek ответил непонятно — остановиться, а не пропустить вопрос</span></label>
+  </div>
+
+  <button id="save">Сохранить</button><span id="saved">Сохранено ✔</span>
+
+  <script src="options.js"></script>
+</body>
+</html>
